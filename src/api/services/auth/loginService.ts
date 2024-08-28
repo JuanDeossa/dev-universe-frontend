@@ -1,6 +1,5 @@
 import { User } from "../../../types/user";
 import { publicAxios } from "../../axios";
-import { paths } from "../../paths";
 
 interface LoginDataResponse {
   token: string;
@@ -21,7 +20,7 @@ export const loginService = async ({
 }): Promise<User | null> => {
   try {
     const { data: resData } = await publicAxios.post(
-      `${paths.auth}/login`,
+      `auth/login`,
       {
         email,
         password,
