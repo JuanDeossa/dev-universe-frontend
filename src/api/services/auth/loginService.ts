@@ -22,51 +22,6 @@ export const loginService = async ({
   console.log(paths.base);
 
   try {
-    await fetch("https://backend-release.up.railway.app/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: "test@example.com",
-        password: "password123",
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log("data 1 :", data));
-
-    const backenUrl = import.meta.env.VITE_API_BASE_URL || "";
-    const email2 = import.meta.env.VITE_EMAIL || "";
-    const password2 = import.meta.env.VITE_PASSWORD || "";
-
-    console.table([backenUrl, email2, password2]);
-
-    await fetch(`${backenUrl}/api/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email2,
-        password: password2,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log("data 2 :", data));
-
-    await fetch(`${paths.auth}/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: "test@example.com",
-        password: "password123",
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log("data 3 :", data));
-
     const { data: resData } = await publicAxios.post(
       `auth/login`,
       {
