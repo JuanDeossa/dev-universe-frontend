@@ -41,8 +41,8 @@ export const loginService = async ({
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: "test@example.com",
-        password: "password123",
+        email: import.meta.env.VITE_EMAIL || "",
+        password: import.meta.env.VITE_PASSWORD || "",
       }),
     })
       .then((response) => response.json())
