@@ -29,7 +29,7 @@ export const loginService = async ({
         password,
       },
       {
-        withCredentials: true,
+        withCredentials: false,
       }
     );
 
