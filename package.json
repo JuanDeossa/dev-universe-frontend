@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "serve dist -s -n -L $PORT"
+    "start": "serve dist -s -n -L $Port"
   },
   "dependencies": {
     "axios": "^1.7.4",
