@@ -35,14 +35,20 @@ export const loginService = async ({
       .then((response) => response.json())
       .then((data) => console.log("data 1 :", data));
 
-    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/login`, {
+    const backenUrl = import.meta.env.VITE_API_BASE_URL || "";
+    const email = import.meta.env.VITE_EMAIL || "";
+    const password = import.meta.env.VITE_PASSWORD || "";
+
+    console.table([backenUrl, email, password]);
+
+    await fetch(`${backenUrl}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: import.meta.env.VITE_EMAIL || "",
-        password: import.meta.env.VITE_PASSWORD || "",
+        email,
+        password,
       }),
     })
       .then((response) => response.json())
