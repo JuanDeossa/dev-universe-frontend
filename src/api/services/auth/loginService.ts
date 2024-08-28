@@ -22,7 +22,7 @@ export const loginService = async ({
   console.log(paths.base);
 
   try {
-    await fetch("https://backend-release.up.railway.app/auth/login", {
+    await fetch("https://backend-release.up.railway.app/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
